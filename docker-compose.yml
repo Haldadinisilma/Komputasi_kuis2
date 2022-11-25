@@ -3,7 +3,7 @@ services:
   app:
     build:
       args:
-        user: haldadinisilma
+        user: halda
         uid: 1000
       context: ./
       dockerfile: Dockerfile
@@ -18,23 +18,22 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: laravel-8-db
+    container_name: projectlaravel-db
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: laravel-8
       MYSQL_ROOT_PASSWORD: halda
       MYSQL_PASSWORD: halda
-      MYSQL_USER: root
+      MYSQL_USER: halda
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
-    volumes:
-      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    
     networks:
-      - gallery
+      - projectlaravel
 
   nginx:
     image: nginx:alpine
-    container_name: gallery-nginx
+    container_name: projectlaravel-nginx
     restart: unless-stopped
     ports:
       - 8000:80
