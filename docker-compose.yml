@@ -44,5 +44,5 @@ services:
       - projectlaravel
 
 networks:
-  gallery:
+  projectlaravel:
     driver: bridge
