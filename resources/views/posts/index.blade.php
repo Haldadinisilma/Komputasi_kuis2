@@ -3,7 +3,7 @@
 @section('content')
     <div class="card mt-5">
         <div class="card-header">
-            <h2>CRUD</h2>
+            <h2>Laravel 8 CRUD</h2>
         </div>
         <div class="card-body">
             <div class="row">
